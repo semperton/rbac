@@ -1,0 +1,17 @@
+{
+    "name": "semperton/rbac",
+    "description": "The Semperton RBAC component.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Semperton\\Rbac\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
