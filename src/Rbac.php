@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Semperton\Rbac;
 
+use Semperton\Rbac\Exception\NotFoundException;
+
 class Rbac
 {
 	protected $roles = [];
@@ -17,20 +19,22 @@ class Rbac
 		return $this;
 	}
 
-	public function addNewRole(string $name): self
+	public function addNewRole(string $name): RoleInterface
 	{
-		$this->roles[$name] = new Role($name);
+		$role = new Role($name);
 
-		return $this;
+		$this->roles[$name] = $role;
+
+		return $role;
 	}
 
-	public function getRole(string $name): ?RoleInterface
+	public function getRole(string $name): RoleInterface
 	{
-		if (isset($this->roles[$name])) {
-			return $this->roles[$name];
+		if (!isset($this->roles[$name])) {
+			throw new NotFoundException("The role with name < $name > is missing");
 		}
 
-		return null;
+		return $this->roles[$name];
 	}
 
 	public function hasRole(string $name): bool
