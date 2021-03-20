@@ -42,11 +42,17 @@ class Rbac
 		return isset($this->roles[$name]);
 	}
 
+	/**
+	 * @return RoleInterface[]
+	 */
 	public function getRoles(): array
 	{
 		return array_values($this->roles);
 	}
 
+	/**
+	 * @return string[]
+	 */
 	public function getRoleNames(): array
 	{
 		return array_keys($this->roles);
@@ -64,6 +70,9 @@ class Rbac
 		return false;
 	}
 
+	/**
+	 * @return string[]
+	 */
 	public function getPermissions(): array
 	{
 		$permissions = [];

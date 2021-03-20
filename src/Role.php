@@ -32,6 +32,9 @@ class Role implements RoleInterface
 		return isset($this->permissions[$name]);
 	}
 
+	/**
+	 * @return string[]
+	 */
 	public function getPermissions(): array
 	{
 		return array_keys($this->permissions);
