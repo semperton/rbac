@@ -7,8 +7,6 @@ use Semperton\Rbac\Exception\NotFoundException;
 use Semperton\Rbac\Rbac;
 use Semperton\Rbac\Role;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
 final class RbacTest extends TestCase
 {
 	public function testRoleName()
@@ -53,7 +51,7 @@ final class RbacTest extends TestCase
 		$adminRole->addPermission('article.delete');
 
 		$rbac->addRole($authorRole);
-		
+
 		$this->assertTrue($rbac->hasPermission('article.create'));
 		$this->assertTrue($rbac->hasPermission('article.delete'));
 	}
