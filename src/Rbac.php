@@ -8,6 +8,7 @@ use Semperton\Rbac\Exception\NotFoundException;
 
 class Rbac
 {
+	/** @var array<string, RoleInterface> */
 	protected $roles = [];
 
 	public function addRole(RoleInterface $role): self

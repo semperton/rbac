@@ -7,7 +7,7 @@ namespace Semperton\Rbac;
 interface RoleInterface
 {
 	public function getName(): string;
-	public function addPermission(string $name);
+	public function addPermission(string $name): self;
 	public function hasPermission(string $name): bool;
 	public function getPermissions(): array;
 }

@@ -6,6 +6,7 @@ namespace Semperton\Rbac;
 
 class Role implements RoleInterface
 {
+	/** @var array<string, true> */
 	protected $permissions = [];
 
 	/** @var string */
